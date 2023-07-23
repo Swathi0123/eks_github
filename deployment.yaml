@@ -1,14 +1,14 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: ecs_github_ecr
+  name: eks_github_ecr
   labels:
-    app: ecs_github_ecr
+    app: eks_github_ecr
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: ecs_github_ecr
+      app: eks_github_ecr
   template:
     metadata:
       labels:
