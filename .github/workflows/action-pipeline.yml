@@ -25,12 +25,7 @@ jobs:
         version: 'v1.24.0' # default is latest stable
       id: install
 
-    - name: Configure AWS Credentials
-      uses: aws-actions/configure-aws-credentials@v1
-      with:
-        role-to-assume: arn:aws:iam::975722656191:role/sample
-        role-session-name: githubactionrolesession
-        aws-region: eu-west-3
+  
 
     - name: Login to Amazon ECR
       id: login-ecr
