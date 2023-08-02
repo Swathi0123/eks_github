@@ -14,6 +14,11 @@ spec:
       labels:
         app: sample
     spec:
+      serviceAccountName: default
+      initContainers:
+      - name: aws-cli
+        image: amazon/aws-cli
+        command: ['aws']
       containers:
         - name: sample
           image: 975722656191.dkr.ecr.eu-west-3.amazonaws.com/sample
