@@ -1,0 +1,9 @@
+---
+apiversion: v1
+kind: ServiceAccount
+metadata:
+  name: app
+  namespace: default
+  annotations:
+    eks.amazonaws.com/role-arn: arn:aws:iam::975722656191:role/sample
+  
