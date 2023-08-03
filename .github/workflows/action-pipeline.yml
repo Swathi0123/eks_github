@@ -54,6 +54,8 @@ jobs:
     - name: Deploy to EKS
       run: |
         aws eks list-clusters
+        ls -la
+        cat ./kube/config
         kubectl config view
         kubectl apply -f deployment.yaml
         kubectl apply -f service.yaml
