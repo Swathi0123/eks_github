@@ -53,7 +53,7 @@ jobs:
     
     - name: Deploy to EKS
       run: |
-        eks list-clusters
+        aws eks list-clusters
         kubectl config view
         kubectl apply -f deployment.yaml
         kubectl apply -f service.yaml
