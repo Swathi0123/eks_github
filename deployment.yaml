@@ -14,7 +14,7 @@ spec:
       labels:
         app: sample
     spec:
-      serviceAccountName: default
+      serviceAccountName: my-service-account
       initContainers:
       - name: aws-cli
         image: amazon/aws-cli
