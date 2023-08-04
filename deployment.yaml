@@ -13,12 +13,7 @@ spec:
     metadata:
       labels:
         app: sample
-    spec:
-      serviceAccountName: my-service-account
-      initContainers:
-      - name: aws-cli
-        image: amazon/aws-cli
-        command: ['aws']
+    spec: 
       containers:
         - name: sample
           image: 975722656191.dkr.ecr.eu-west-3.amazonaws.com/sample
