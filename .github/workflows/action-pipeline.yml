@@ -51,7 +51,7 @@ jobs:
     - name: Update kube config
       env: 
         KUBECONFIG: /home/runner/.kube/config
-      run: aws eks --region eu-west-3 update-kubeconfig --name githubactionpoc
+      run: aws eks update-kubeconfig --name githubactionpoc --region eu-west-3
     
     - name: Deploy to EKS
       run: |
