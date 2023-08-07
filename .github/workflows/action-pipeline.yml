@@ -51,7 +51,7 @@ jobs:
     - name: Update kube config
       run: |
       
-          CREDENTIALS= $(aws sts assume-role --profile sap --role-arn  arn:aws:iam::975722656191:role/sap --role-session-name sample --duration-seconds 3600)
+          CREDENTIALS= $(aws sts assume-role --profile github-oidc-role1 --role-arn  arn:aws:iam::975722656191:role/github-oidc-role1 --role-session-name sample --duration-seconds 3600)
           export AWS_ACCESS_KEY_ID= "$(echo ${CREDENTIALS} | jq -r '.Credentials.AccessKeyId')"
           export AWS_SECRET_ACCESS_KEY= "$(echo ${CREDENTIALS} | jq -r '.Credentials.SecretAccessKey')"
           export AWS_SESSION_TOKEN="$(echo ${CREDENTIALS} | jq -r '.Credentials.SessionToken')"
