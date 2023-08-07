@@ -51,7 +51,7 @@ jobs:
     - name: Update kube config
       run: |
       
-          CREDENTIALS= $(aws sts assume-role --profile account-role --role-arn https://signin.aws.amazon.com/switchrole?roleName=account-role&account=975722656191 --role-session-name account-role --duration-seconds 3600)
+          CREDENTIALS= $(aws sts assume-role --profile account-role --role-arn https://signin.aws.amazon.com/switchrole?roleName=account-role&account=975722656191  --duration-seconds 3600)
           export AWS_ACCESS_KEY_ID= "$(echo ${CREDENTIALS} | jq -r '.Credentials.AccessKeyId')"
           export AWS_SECRET_ACCESS_KEY= "$(echo ${CREDENTIALS} | jq -r '.Credentials.SecretAccessKey')"
           export AWS_SESSION_TOKEN="$(echo ${CREDENTIALS} | jq -r '.Credentials.SessionToken')"
