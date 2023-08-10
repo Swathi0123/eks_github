@@ -30,7 +30,9 @@ jobs:
       uses: aws-actions/configure-aws-credentials@v1
       with:
         role-to-assume: arn:aws:iam::482385139505:role/kl
+        role-to-assume1: arn:aws:iam::482385139505:role/my-role
         role-session-name: githubactionrolesession1
+        role-session-name1: githubactionrolesession12
         aws-region: us-east-1
       
 
@@ -54,7 +56,7 @@ jobs:
       run: |
           aws sts get-caller-identity 
           aws eks --region us-east-1 update-kubeconfig --name githubactionpoc 
-          eksctl get iamidentitymapping --cluster githubactionpoc
+        
            
     
     - name: Deploy to EKS
