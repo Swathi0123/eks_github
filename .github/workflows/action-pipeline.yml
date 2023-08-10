@@ -51,7 +51,8 @@ jobs:
 
     - name: Update kube config
       run: |
-          aws eks --region us-east-1 update-kubeconfig --name githubactionpoc
+          aws sts get-caller-identity --profile MY-PROFILE
+          aws eks --region us-east-1 update-kubeconfig --name githubactionpoc —profile my-profile
            
     
     - name: Deploy to EKS
