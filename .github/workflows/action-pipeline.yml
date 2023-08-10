@@ -50,7 +50,7 @@ jobs:
 
     - name: Update kube config
       run: |
-          aws eks update-kubeconfig --name githubactionpoc1 --region eu-west-3 
+          aws eks update-kubeconfig --name githubactionpoc --region eu-west-3 
           
     
     - name: Deploy to EKS
