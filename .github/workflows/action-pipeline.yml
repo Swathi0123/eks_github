@@ -9,6 +9,7 @@ on:
 permissions:
       id-token: write   # This is required for requesting the JWT
       
+      
       contents: read    
       
 
@@ -50,8 +51,7 @@ jobs:
 
     - name: Update kube config
       run: |
-          aws eks update-kubeconfig --name githubactionpoc --region eus-east-1
-          aws eks update-cluster-config --region region-code --name githubactionpoc--resources-vpc-config endpointPublicAccess=true,publicAccessCidrs="192.168.0.0/19",endpointPrivateAccess=true
+          aws eks --region us-east-1 update-kubeconfig --name githubactionpoc
            
     
     - name: Deploy to EKS
