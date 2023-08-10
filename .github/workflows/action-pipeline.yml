@@ -32,7 +32,7 @@ jobs:
         role-to-assume: arn:aws:iam::482385139505:role/kl
         role-session-name: githubactionrolesession1
         aws-region: us-east-1
-        profile-name: test
+      
 
   
 
@@ -52,7 +52,7 @@ jobs:
 
     - name: Update kube config
       run: |
-          aws sts get-caller-identity --profile  test
+          aws sts get-caller-identity 
           aws eks --region us-east-1 update-kubeconfig --name githubactionpoc  
            
     
